@@ -1,0 +1,4 @@
+{
+    "python.formatting.provider": "black",
+    "python.pythonPath": "/home/francisco/.VirtualEnvs/Django/bin/python3"
+}
