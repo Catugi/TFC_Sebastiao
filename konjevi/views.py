@@ -14,7 +14,8 @@ def cadastrar_usuarios(request):
 
 
 def efectuar_reserva(request):
-    return render(request, "konjevi/efectuar_reserva_quarto.html")
+    data = {"data": "Mydata"}
+    return render(request, "konjevi/efectuar_reserva_quarto.html", data)
 
 
 def efectuar_vendas(request):
