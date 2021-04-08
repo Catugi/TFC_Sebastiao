@@ -32,7 +32,7 @@ class Suplier(models.Model):
     data_contratacao = models.DateField(auto_now=True)
     endereco = models.CharField(max_length=100)
     funcao = models.CharField(max_length=20)
-    sexo = models.CharField(max_length=10)
+    sexo = models.CharField(max_length=20)
 
 
 class Product(models.Model):
