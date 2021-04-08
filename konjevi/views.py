@@ -5,6 +5,10 @@ def home(request):
     return render(request, "konjevi/home.html")
 
 
+def cadastrar_fornecedor(request):
+    return render(request, "konjevi/cadastrar_fornecedor.html")
+
+
 def cadastrar_produtos(request):
     return render(request, "konjevi/cadastrar_produto.html")
 
