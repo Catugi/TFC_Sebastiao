@@ -1,3 +1,6 @@
+{% extends "./base.html" %}
+
+{% block content %}
 <h1>Página inicial</h1>
 
 <a href="{% url 'vendas' %}">Vendas</a><br>
@@ -5,3 +8,4 @@
 <a href="{% url 'cadproduto' %}">Cadastrar Produtos</a><br>
 <a href="{% url 'efectuar_reserva' %}">Efectuar Reserva</a><br>
 <a href="{% url 'cadastrar_fornecedores' %}">cadusuaurio forncedor</a><br>
+{% endblock %}
