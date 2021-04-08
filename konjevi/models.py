@@ -24,6 +24,10 @@ class Client(models.Model):
     sexo = models.CharField(max_length=10)
 
 
+class TypeSuplier(models.Model):
+    nome = models.CharField(max_length=30)
+
+
 class Suplier(models.Model):
     primeiro_nome = models.CharField(max_length=30)
     apelidp = models.CharField(max_length=30, blank=True)
@@ -36,19 +40,31 @@ class Suplier(models.Model):
 
 
 class Product(models.Model):
+    fornedcedor = models.ForeignKey(Suplier, on_delete=models.CASCADE)
     nome = models.CharField(max_length=100)
+    tipo = models.CharField(max_length=30)
+    preco = models.FloatField()
 
 
 class Venda(models.Model):
+    nome_do_cliente = models.CharField(max_length=30)
     produto = models.ForeignKey(Product, on_delete=models.CASCADE)
     funcionario = models.ForeignKey(User, on_delete=models.CASCADE)
     data = models.DateTimeField(auto_now=True)
 
 
 class Room(models.Model):
-    tipo = models.CharField(max_length=20)
+    categoria = models.CharField(max_length=20)
+    preco = models.FloatField()
 
 
 class Reserva(models.Model):
     quarto = models.ForeignKey(Room, on_delete=models.CASCADE)
     atendente = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class RentRoom(models.Model):
+    estado = models.CharField(max_length=20)
+    tempo_de_aluguel = models.IntegerField(blank=True)
+    preco = models.FloatField()
+    hora_de_entrada = models.DateTimeField(auto_now=True)
